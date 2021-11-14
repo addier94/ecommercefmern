@@ -6,6 +6,8 @@ const cors = require("cors");
 const { readdirSync } = require("fs");
 require("dotenv").config();
 
+const path = require("path");
+
 // app
 const app = express();
 
@@ -19,6 +21,9 @@ mongoose
   })
   .then(() => console.log("DB CONNECTED"))
   .catch((err) => console.log("DB CONNECTION ERR", err));
+
+  app.use(express.static(path.resolve(__dirname, "../build")));
+  // app.use(express.static(path.resolve(__dirname, "./client/build")));
 
 // middlewares
 app.use(morgan("dev"));
