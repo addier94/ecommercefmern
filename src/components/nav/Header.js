@@ -43,8 +43,7 @@ const Header = () => {
 
   return (
     <>
-
-    <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal">
+    <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal" style={{display: "block"}}>
 
       <SubMenu title="Lang">
         <Menu.Item onClick={() => changeLang("en")}>En (English)</Menu.Item>
@@ -108,7 +107,7 @@ const Header = () => {
       </span>
     </Menu>
     </>
-  );
+ );
 };
 
 export default Header;
